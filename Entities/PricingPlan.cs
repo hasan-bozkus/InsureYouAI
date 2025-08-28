@@ -8,5 +8,6 @@
         public decimal Price { get; set; }
         public bool IsFEature { get; set; }
         //public string BillingCycle { get; set; } // e.g., Monthly, Yearly
+        public List<PricingPlanItem> PricingPlanItems { get; set; }
     }
 }
