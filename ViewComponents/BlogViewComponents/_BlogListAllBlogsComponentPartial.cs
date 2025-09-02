@@ -17,7 +17,7 @@ namespace InsureYouAI.ViewComponents.BlogViewComponents
         public async Task<IViewComponentResult> InvokeAsync(int page)
         {
             var values = await _context.Articles.Include(x => x.Category).Include(y => y.AppUser).ToListAsync();
-            return View(values.ToPagedList(page, 4));
+            return View(values.ToPagedList(page, 3));
         }
     }
 }
