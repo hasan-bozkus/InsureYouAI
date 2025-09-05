@@ -1,12 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using InsureYouAI.Context;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace InsureYouAI.ViewComponents.BlogDetailViewComponents
 {
     public class _BlogDetailCommentListComponentPartial : ViewComponent
     {
-        public async Task<IViewComponentResult> InvokeAsync()
+        private readonly InsureContext _context;
+
+        public _BlogDetailCommentListComponentPartial(InsureContext context)
         {
-            return View();
+            _context = context;
+        }
+
+        public async Task<IViewComponentResult> InvokeAsync(int id)
+        {
+            var values = await _context.Comments.Where(x => x.ArticleId == id && x.CommentStatus == "Yorum Onaylandı").Include(y => y.AppUser).ToListAsync();
+            return View(values);
         }
     }
 }
