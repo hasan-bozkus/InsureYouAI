@@ -1,10 +1,16 @@
 using InsureYouAI.Context;
 using InsureYouAI.Entities;
+using InsureYouAI.Models;
 using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpClient();
+builder.Services.AddSignalR();
+builder.Services.AddHttpClient("openai", c=>
+{
+    c.BaseAddress = new Uri("https://api.openai.com/");
+});
 
 builder.Services.AddDbContext<InsureContext>();
 builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<InsureContext>().AddDefaultTokenProviders();
@@ -31,6 +37,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
-
+app.MapHub<ChatHub>("/chathub");
 
 app.Run();
