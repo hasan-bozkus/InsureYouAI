@@ -15,7 +15,7 @@ namespace InsureYouAI.ViewComponents.DefaultViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var values = await _context.Articles.OrderByDescending(x => x.ArticleId).Include(y => y.Category).Take(3).ToListAsync();
+            var values = await _context.Articles.Include(x => x.AppUser).OrderByDescending(x => x.ArticleId).Include(y => y.Category).Take(3).ToListAsync();
             return View(values);
         }
     }
