@@ -36,7 +36,7 @@ namespace InsureYouAI.ViewComponents.DashboardViewComponents
 
             var model = new RevenueExpenseChartViewModel()
             {
-                Months = allMonths.Select(x => new System.Globalization.DateTimeFormatInfo().GetAbbreviatedMonthName(x)).ToList(),
+                Months = allMonths.Select(x => new System.Globalization.CultureInfo("tr-TR").DateTimeFormat.GetAbbreviatedMonthName(x)).ToList(),
                 RevenueTotals = allMonths.Select(m => revenuedata.FirstOrDefault(r => r.Month == m)?.TotalAmount ?? 0).ToList(),
                 ExpenseTotals = allMonths.Select(m => expensedata.FirstOrDefault(r => r.Month == m)?.TotalAmount ?? 0).ToList()
             };

@@ -218,7 +218,7 @@ $(function() {
             margin: 0,
             size: '80%',
 			//background: '#000',
-            image: 'assets/images/icons/shopping-cart.svg',
+                image: '/snacked/ltr/assets/images/icons/shopping-cart.svg',
 		    imageWidth: 34,
 		    imageHeight: 34,
 			imageClipped: false
@@ -292,7 +292,7 @@ $(function() {
             margin: 0,
             size: '80%',
 			//background: '#000',
-            image: 'assets/images/icons/man-user.svg',
+                image: '/snacked/ltr/assets/images/icons/man-user.svg',
 		    imageWidth: 34,
 		    imageHeight: 34,
 			imageClipped: false
@@ -365,7 +365,7 @@ $(function() {
             margin: 0,
             size: '80%',
 			//background: '#000',
-            image: 'assets/images/icons/eye.svg',
+                image: '/snacked/ltr/assets/images/icons/eye.svg',
 		    imageWidth: 34,
 		    imageHeight: 34,
 			imageClipped: false
@@ -438,7 +438,7 @@ $(function() {
             margin: 0,
             size: '80%',
 			//background: '#000',
-            image: 'assets/images/icons/influencer.svg',
+                image: '/snacked/ltr/assets//images/icons/influencer.svg',
 		    imageWidth: 34,
 		    imageHeight: 34,
 			imageClipped: false
