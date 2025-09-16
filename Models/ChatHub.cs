@@ -9,6 +9,7 @@ namespace InsureYouAI.Models
 {
     public class ChatHub : Hub
     {
+        //anahtar ezildi
         private const string apiKey = "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";
 
         private const string modelGpt = "gpt-4o-mini";

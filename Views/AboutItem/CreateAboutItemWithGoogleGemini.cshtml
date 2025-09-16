@@ -7,6 +7,7 @@
 <h1>Google Gemini Hakkımızda Öğeleri Yazı Örneği</h1>
 
 <hr />
-
-<p>@ViewBag.value</p>
-
+@foreach(var item in ViewBag.value as List<string>)
+{
+    <p>@item</p>
+}

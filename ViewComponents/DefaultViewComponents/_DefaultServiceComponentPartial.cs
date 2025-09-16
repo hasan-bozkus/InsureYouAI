@@ -20,4 +20,3 @@ namespace InsureYouAI.ViewComponents.DefaultViewComponents
         }
     }
 }
-//~/insureyou/img/icon/sve-icon1.png

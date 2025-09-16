@@ -62,6 +62,7 @@ namespace InsureYouAI.Controllers
 
         public async Task<IActionResult> CreateServiceWithAntrophicClaude()
         {
+            //anahtar ezildi
             string apiKey = "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";
             string prompt = "Bir sigorta şirketi için hizmetler bölümü hazırlamanı istiyorum. Burada 5 farklı hizmet olmalı. Bana maksimum 100 karakterden oluşan cümlelerle 5 tane hizmet içeriği yazar mısın?";
 

@@ -16,7 +16,7 @@ namespace InsureYouAI.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var values = await _context.Articles.ToListAsync();
+            var values = await _context.Articles.Include(x=> x.AppUser).ToListAsync();
             return View(values);
         }
 
@@ -69,6 +69,7 @@ namespace InsureYouAI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateArticleWithOpenAI(string prompt)
         {
+            //anahtar ezildi
             var apiKey = "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";
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);

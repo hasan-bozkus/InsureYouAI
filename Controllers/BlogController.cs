@@ -42,6 +42,7 @@ namespace InsureYouAI.Controllers
 
             using (var client = new HttpClient())
             {
+                //anahtar ezildi
                 var apiKey = "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";
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
 

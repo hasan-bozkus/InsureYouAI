@@ -36,7 +36,8 @@ namespace InsureYouAI.Controllers
             await _context.SaveChangesAsync();
 
             #region Claude_AI_Analiz
-
+            
+            //anahtar ezildi
             string apiKey = "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";
             string prompt = $"Sen bir sigorta firmasının müşteri iletişim asistanısın. Kurumsal ama samimi, net ve anlaşılır bir dille yaz. Yanıtların 2-3 paragrafla sınırla. Eksik bilgi (poliçe numarası, kimlik, vb.) varsa kibarca talep et. Fiyat, ödeme, teminat gibi kritik konularsa kesin rakam verme, müşteri temsilcisine yönlendir. Hasar ve sağlık gibi hassas durumlarda empati kur. Cevaplarını teşekkür ve iyi dilekle bitir. Ayrıca cevabın için 1 cümlelik özet bir e-posta konu başlığı üret. Cevabı JSON formatında şu şekilde ver:  {{\r\n  \"\"subject\"\": \"\"...\"\",\r\n  \"\"body\"\": \"\"...\"\"\r\n}}. Kullanıcının sana gönderdiği mesaj şu şekilde: '{message.MessageDetail}'.";
 

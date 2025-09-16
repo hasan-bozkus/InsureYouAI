@@ -62,6 +62,7 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateAboutItemWithGoogleGemini()
         {
+            //anahtar ezildi
             var apiKey = "AIzaSyCWnN59rffSSTsv_fH68Y8xazAudMGKyUE";
             var model = "gemini-1.5-pro";
             var url = $"https://generativelanguage.googleapis.com/v1/models/{model}:generateContent?key={apiKey}";
@@ -93,7 +94,18 @@ namespace InsureYouAI.Controllers
                 .GetProperty("parts")[0]
                 .GetProperty("text")
                 .GetString();
-            ViewBag.value = aboutText;
+
+            // Satır bazlı ayır
+
+            var items = aboutText.Split(new[] { '\n', '-', '•' }, StringSplitOptions.RemoveEmptyEntries)
+
+                                 .Select(x => x.Trim())
+
+                                 .Where(x => !string.IsNullOrWhiteSpace(x))
+
+                                 .ToList();
+
+            ViewBag.value = items;
 
             return View();
         }
