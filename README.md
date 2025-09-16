@@ -8,7 +8,7 @@ Insure You AI, uygulamada yapay zeka teknolojilerini sigorta sektörüne entegre
 
 Insure You AI; Asp.Net Core Mvc 9.0, EntityFramework Core, Open AI, Gemini, Anthropic, Microsoft Azure AI, Stabilitiy AI ve Replicate gibi öne çıkan ai servileri kullanılarak geliştirildi.
 
-⚠️ Not: Bu proje Murat Yücedağ’ın “ASP.NET Core ile Yapay Zeka Entegrasyonları: Sigorta Projesi” kursu kapsamında geliştirilmekte olup halen devam etmektedir. Kurs tamamlandıkça repo güncellenecektir.
+⚠️ Not: Bu proje geliştirilmekte olup halen devam etmektedir. Kurs tamamlandıkça repo güncellenecektir.
 
 ## 🔧 Teknik Yapı ve Mimarisi
 💎 .Net Core 9.0 Mvc <br />
@@ -37,3 +37,29 @@ Insure You AI; Asp.Net Core Mvc 9.0, EntityFramework Core, Open AI, Gemini, Anth
 
 ## Projeye İlişkin Bazı Görseller
 
+![1](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20201439.png)
+![2](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20201834.png)
+![3](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20201854.png)
+![4](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20203015.png)
+![5](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20203039.png)
+![6](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20203056.png)
+![7](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20203119.png)
+![8](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20203138.png)
+![9](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20203159.png)
+![10](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20203337.png)
+![11](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20204435.png)
+![12](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20204504.png)
+![13](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20204526.png)
+![14](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20204801.png)
+![15](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20205145.png)
+![16](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-14%20205203.png)
+![17](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-15%20132802.png)
+![18](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-15%20132907.png)
+![19](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-16%20101437.png)
+![20](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-16%20101710.png)
+![21](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-16%20101739.png)
+![22](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-16%20101759.png)
+![23](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-16%20101815.png)
+![24](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-16%20101832.png)
+![25](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-09-16%20101856.png)
+![26](https://github.com/hasan-bozkus/InsureYouAI/blob/master/wwwroot/images/2025-09-11_10-06-35.png)
