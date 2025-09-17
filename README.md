@@ -32,8 +32,14 @@ Insure You AI; Asp.Net Core Mvc 9.0, EntityFramework Core, Open AI, Gemini, Anth
 
 ![.NET](https://img.shields.io/badge/.NET%209.0-purple?logo=dotnet)
 ![Entity Framework](https://img.shields.io/badge/EntityFrameworkCore-green)
+![Gemini](https://img.shields.io/badge/Google-Gemini-red?logo=google)
 ![OpenAI](https://img.shields.io/badge/OpenAI-API-blue?logo=openai)
-![Azure](https://img.shields.io/badge/Azure-AI-blue?logo=microsoftazure)
+![Hugging Face](https://img.shields.io/badge/HuggingFace-Spaces-yellow?logo=huggingface&logoColor=black)
+![Anthropic](https://img.shields.io/badge/Anthropic-Claude-A16D21?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NjAiIGhlaWdodD0iOTYwIiB2aWV3Qm94PSIwIDAgNzUgNzUiPgogIDxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0zNy41IDBDMTYuNzgzIDAgMCAxNi43ODMgMCAzNy41UzE2Ljc4MyA3NSA1MC4yMTcgNzVsMjAuNjI4LTIwLjYyOUEzNy40NjcgMzcuNDY3IDAgMDA3NSA1MC4yMTdWNUN6Ii8+CiAgPHBhdGggZmlsbD0iI0ExNkQyMSIgZD0iTTAgNDkuMDk3QTM3LjUgMzcuNSAwIDAwMzcuNSA3NXMzNy41LTI2LjcwMyAzNy41LTI2LjcwM1YwTDM3LjUgMTkuNjk1em02MC4wMzQtNDQuNDc3LTYwLjAzNCA2MC4wMzR2MTAuMzQ5QTM3LjUgMzcuNSAwIDAwNDkuMDk3IDc1TDU2LjgyIDY3Ljg4IDU2LjgyIDY2LjczTDYwLjA1NyA2NEM2MC4wNTcgNTUuODg5IDYwLjAzNCAzOC43MyA2MC4wMzQgNC42MnptMTQuNjM2IDQyLjY3NEEzNy41IDM3LjUgMCAwMDY2Ljg4IDY2LjgzN2w2Ljg4NS02Ljg4NSAzLjI0Ny0zLjI0N1YyNS44ODJsLTExLjk5Mi0xMS45OTJWMjQuMjJ6Ii8+Cjwvc3ZnPg==)
+![Microsoft.ML](https://img.shields.io/badge/Microsoft-ML.NET-50217D?logo=microsoft)
+![SignalR](https://img.shields.io/badge/ASP.NET-SignalR-darkblue?logo=signalr)
+![ApexCharts](https://img.shields.io/badge/ApexCharts-Visualizations-00A9FF?logo=apexcharts)
+![jQuery](https://img.shields.io/badge/jQuery-JavaScript-0769AD?logo=jquery&logoColor=white)
 
 ## Projeye İlişkin Bazı Görseller
 
