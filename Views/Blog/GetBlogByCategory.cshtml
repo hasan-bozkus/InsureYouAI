@@ -8,13 +8,14 @@
     @await Component.InvokeAsync("_DefaultHeadComponentPartial")
 
 <body>
-
     <header class="header-area header-three">
+
         @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
 
         @await Component.InvokeAsync("_DefaultHeaderContactComponentPartial")
 
         @await Component.InvokeAsync("_DefaultNavbarComponentPartial")
+
     </header>
 
     @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
@@ -22,26 +23,16 @@
     <main>
 
         @await Component.InvokeAsync("_BlogListBreadCrumbComponentPartial")
-
-        <section class="inner-blog b-details-p pt-120 pb-120">
+        <!-- breadcrumb-area -->
+        <!-- breadcrumb-area-end -->
+        <!-- inner-blog -->
+        <section class="inner-blog pt-120 pb-120">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8">
-                        <div class="blog-details-wrap">
-                            @await Component.InvokeAsync("_BlogDetailContentComponentPartial", new { id = ViewBag.id })
-
-                            @await Component.InvokeAsync("_BlogDetailNextAndPrevPostComponentPartial", new { id = ViewBag.id })
-
-                            @await Component.InvokeAsync("_BlogDetailAboutAuthorComponentPartial", new { id = ViewBag.id })
-
-                            @await Component.InvokeAsync("_BlogDetailCommentListComponentPartial", new { id = ViewBag.id })
-                            @await Component.InvokeAsync("_BlogDetailAddCommentComponentPartial")
-
-
-                        </div>
-                    </div>
+                    @await Component.InvokeAsync("_BlogListByCategoryComponentPartial", new { id = ViewBag.id, page = ViewBag.page })
 
                     <div class="col-sm-12 col-md-12 col-lg-4">
+
                         <aside class="sidebar-widget">
                             @await Component.InvokeAsync("_BlogListSearchComponentPartial")
                             @await Component.InvokeAsync("_BlogListSocialMediaComponentPartial")
@@ -50,15 +41,17 @@
                             @await Component.InvokeAsync("_BlogListTagComponentPartial")
                         </aside>
                     </div>
-
                 </div>
             </div>
         </section>
-
+        <!-- inner-blog-end -->
+        <!-- newslater-area -->
         @await Component.InvokeAsync("_DefaultSubscribtionComponentPartial")
 
+        <!-- newslater-aread-end -->
     </main>
-
+    <!-- main-area-end -->
+    <!-- footer -->
     @await Component.InvokeAsync("_DefaultFooterComponentPartial")
 
     @await Component.InvokeAsync("_DefaultScriptsComponentPartial")

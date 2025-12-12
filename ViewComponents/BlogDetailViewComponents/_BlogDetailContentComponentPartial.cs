@@ -17,6 +17,7 @@ namespace InsureYouAI.ViewComponents.BlogDetailViewComponents
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {
             var value = await _context.Articles.Include(x => x.AppUser).Include(y => y.Category).Where(x => x.ArticleId == id).FirstOrDefaultAsync();
+            ViewBag.commentCount = await _context.Comments.Where(x => x.ArticleId == id).CountAsync();
             return View(value);
         }
     }

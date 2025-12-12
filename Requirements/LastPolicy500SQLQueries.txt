@@ -1,0 +1,87 @@
+﻿DECLARE @PolicyTypes TABLE (TypeName NVARCHAR(20));
+INSERT INTO @PolicyTypes VALUES
+(N'Eğitim'), (N'Kasko'), (N'Konut'), (N'Sağlık'), (N'Trafik');
+
+DECLARE @Users TABLE (Id UNIQUEIDENTIFIER);
+INSERT INTO @Users VALUES
+('2142050c-01bf-4cae-b133-e20775a1f4ab'),
+('27c1dbbb-b26c-4728-b350-b4a403c7a1df'),
+('444257a4-b87f-4424-8f22-01fcf09113fb'),
+('66d8de36-6349-47de-b3ff-08ca0107748e'),
+('8b552bee-7ee3-4b52-86f4-0797ff9e3fcc'),
+('9a1876cc-9847-4784-a0fa-ff43c4a67eff'),
+('a3150b7b-fcee-4c6f-bc44-2d87e58cfb0d'),
+('bab591fd-4964-4c43-8278-ad65c8756a45'),
+('e1cfffe2-6c82-49fd-9218-bcc06003b42d'),
+('e82ea672-8051-47f8-a264-9b95c6b13a8c');
+
+DECLARE @Months TABLE (MonthValue INT, TargetCount INT);
+INSERT INTO @Months VALUES
+(5, 65), -- Mayıs
+(6, 70), -- Hazıran
+(7, 75), -- Temmuz
+(8, 85), -- Ağustos
+(9, 75), -- Eylül
+(10, 70), -- Ekim
+(11, 65)-- Kasım
+
+DECLARE
+@Month INT,
+@Target INT,
+@i INT = 1,
+@PolicyType NVARCHAR(20),
+@UserId UNIQUEIDENTIFIER,
+@Premium INT,
+@CreatedDate DATETIME,
+@StartDate DATETIME,
+@EndDate DATETIME;
+
+DECLARE month_cursor CURSOR FOR
+SELECT MonthValue, TargetCount FROM @Months;
+
+OPEN month_cursor;
+FETCH NEXT FROM month_cursor INTO @Month, @Target;
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	SET @i = 1;
+
+	WHILE @i <= @Target
+	BEGIN
+		-- Poliçe türü seç
+		SELECT TOP 1 @PolicyType = TypeName
+		FROM @PolicyTypes ORDER by NEWID();
+
+		--User seç
+		SELECT TOP 1 @UserId = Id
+		FROM @Users ORDER BY NEWID();
+
+		-- Premium random
+		SET @Premium = (ABS(CHECKSUM(NEWID())) % 6000) + 4000;
+
+		-- Tarihler
+		SET @CreatedDate = DATEFROMPARTS(2025, @Month, ABS(CHECKSUM(NEWID())) % 28 + 1);
+		SET @StartDate = @CreatedDate;
+		SET @EndDate = DATEADD(YEAR, 1, @CreatedDate);
+
+		INSERT INTO Policies
+		(PolicyNumber, PolicyType, AppUserId, PremiumAmount, StartDate, EndDate, Status, CreatedDate, UpdatedDate)
+		VALUES
+		(
+		CONCAT(LEFT(@PolicyType, 3), '-2025-', FORMAT((SELECT COUNT(*) + 1 FROM Policies), '0000')),
+		@PolicyType,
+		@UserId,
+		@Premium,
+		@StartDate,
+		@EndDate,
+		'Active',
+		@CreatedDate,
+		NULL
+		);
+		SET @i = @i + 1;
+	END;
+	FETCH NEXT FROM month_cursor INTO @Month, @Target;
+END;
+
+CLOSE month_cursor;
+DEALLOCATE month_cursor

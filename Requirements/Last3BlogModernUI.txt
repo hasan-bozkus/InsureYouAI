@@ -1,5 +1,4 @@
-﻿@model List<Article>
-<section id="recent-posts-4" class="widget widget_recent_entries">
+﻿<section id="recent-posts-4" class="widget widget_recent_entries">
     <h2 class="widget-title">Son Yazılar</h2>
     <ul style="list-style:none; padding:0;">
         @foreach (var item in Model)

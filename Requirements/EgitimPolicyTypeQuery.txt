@@ -1,0 +1,13 @@
+﻿INSERT INTO [Insure].[dbo].[Policies]
+(PolicyNumber, PolicyType, AppUserId, PremiumAmount, StartDate, EndDate, Status, CreatedDate)
+VALUES
+('EDU-2025-001', 'Eğitim', 'f78e76a7-8a62-4bef-906f-21a545d49fbe', 8500, '2025-01-15', '2026-01-15', 'Active', GETDATE()),
+('EDU-2025-002', 'Eğitim' ,'2142050c-01bf-4cae-b133-e20775a1f4ab', 9200, '2025-02-01', '2026-02-01', 'Active', GETDATE()),
+('EDU-2025-003', 'Eğitim' ,'27c1dbbb-b26c-4728-b350-b4a403c7a1df', 7800, '2025-03-10', '2026-03-10', 'Active', GETDATE()),
+('EDU-2025-004', 'Eğitim' ,'444257a4-b87f-4424-8f22-01fcf09113fb', 8900, '2025-04-05', '2026-04-05', 'Active', GETDATE()),
+('EDU-2025-005', 'Eğitim' ,'66d8de36-6349-47de-b3ff-08ca0107748e', 9500, '2025-05-20', '2026-05-20', 'Active', GETDATE()),
+('EDU-2025-006', 'Eğitim' ,'9a1876cc-9847-4784-a0fa-ff43c4a67eff', 8100, '2025-06-02', '2026-06-02', 'Active', GETDATE()),
+('EDU-2025-007', 'Eğitim' ,'a3150b7b-fcee-4c6f-bc44-2d87e58cfb0d', 8700, '2025-07-18', '2026-07-18', 'Active', GETDATE()),
+('EDU-2025-008', 'Eğitim' ,'bab591fd-4964-4c43-8278-ad65c8756a45', 9300, '2025-08-01', '2026-08-01', 'Active', GETDATE()),
+('EDU-2025-009', 'Eğitim' ,'e1cfffe2-6c82-49fd-9218-bcc06003b42d', 8200, '2025-09-07', '2026-09-07', 'Active', GETDATE()),
+('EDU-2025-010', 'Eğitim' ,'e82ea672-8051-47f8-a264-9b95c6b13a8c', 8800, '2025-10-12', '2026-10-12', 'Active', GETDATE());

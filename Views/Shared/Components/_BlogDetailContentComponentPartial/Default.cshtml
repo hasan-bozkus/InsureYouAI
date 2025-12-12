@@ -6,7 +6,7 @@
     <div class="meta-info">
         <ul>
             <li><i class="fal fa-user"></i> Yazar: @Model.AppUser.UserName </li>
-            <li><i class="fal fa-comments"></i> 0 Yorum</li>
+            <li><i class="fal fa-comments"></i> @ViewBag.commentCount Yorum</li>
             <li><i class="fal fa-car"></i> @Model.Category.CategoryName </li>
             <li><i class="fal fa-calendar-alt"></i> @Model.CreatedDate.ToString("dd-MMM-yyyy")</li>
         </ul>

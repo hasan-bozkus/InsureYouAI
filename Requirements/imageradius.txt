@@ -1,5 +1,4 @@
-﻿@model AppUser
-<div class="avatar__wrap text-center mb-45">
+﻿<div class="avatar__wrap text-center mb-45">
     <div class="avatar-img">
         <img src="@Model.ImageUrl" alt="">
     </div>
@@ -27,10 +26,10 @@
         border-radius: 50%;
         object-fit: cover;
         border: 3px solid #ddd;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-shadow: 0 0 10px rgba(0,0,0,0,1);
     }
     .avatar-img{
-        display:flex;
+        display:none;
         justify-content: center;
         align-items: center;
         margin: 0 auto 15px auto;

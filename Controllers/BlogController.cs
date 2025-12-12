@@ -1,9 +1,11 @@
 ﻿using InsureYouAI.Context;
 using InsureYouAI.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace InsureYouAI.Controllers
 {
@@ -22,10 +24,17 @@ namespace InsureYouAI.Controllers
             return View();
         }
 
+        public async Task<IActionResult> GetBlogByCategory(int id, int page = 1)
+        {
+            ViewBag.id = id;
+            ViewBag.page = page;
+            return View();
+        }
+
         [HttpGet]
         public IActionResult GetBlog(string keyword)
         {
-            return RedirectToAction("Index"); 
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> BlogDetail(int id)
@@ -60,7 +69,7 @@ namespace InsureYouAI.Controllers
                     var translateResponseString = await translateResponse.Content.ReadAsStringAsync();
 
                     string englishText = comment.CommentDetail;
-                    if(translateResponseString.TrimStart().StartsWith("["))
+                    if (translateResponseString.TrimStart().StartsWith("["))
                     {
                         var translateDoc = JsonDocument.Parse(translateResponseString);
                         englishText = translateDoc.RootElement[0].GetProperty("translation_text").GetString()!;
@@ -77,21 +86,21 @@ namespace InsureYouAI.Controllers
                     var toxicResponse = await client.PostAsync("https://api-inference.huggingface.co/models/unitary/toxic-bert", toxicContent);
                     var toxicResponseString = await toxicResponse.Content.ReadAsStringAsync();
 
-                    if(toxicResponseString.TrimStart().StartsWith("["))
+                    if (toxicResponseString.TrimStart().StartsWith("["))
                     {
                         var toxicDoc = JsonDocument.Parse(toxicResponseString);
-                        foreach(var item in toxicDoc.RootElement[0].EnumerateArray())
+                        foreach (var item in toxicDoc.RootElement[0].EnumerateArray())
                         {
                             string label = item.GetProperty("label").GetString()!;
                             double score = item.GetProperty("score").GetDouble();
-                            if(score >= 0.5)
+                            if (score >= 0.5)
                             {
                                 comment.CommentStatus = "Toksik Yorum";
                                 break;
                             }
                         }
                     }
-                    if(string.IsNullOrEmpty(comment.CommentStatus))
+                    if (string.IsNullOrEmpty(comment.CommentStatus))
                     {
                         comment.CommentStatus = "Yorum Onaylandı";
                     }
@@ -102,7 +111,7 @@ namespace InsureYouAI.Controllers
                     throw;
                 }
             }
-          
+
 
             await _context.Comments.AddAsync(comment);
             await _context.SaveChangesAsync();

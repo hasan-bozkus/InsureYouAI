@@ -1,0 +1,36 @@
+﻿<script src="https://cdn.ckeditor/4.20.1/standart-all/ckeditor.js"></script>
+
+<script>
+	document.addEventListener("DOMConentLoaded", function() {
+	if(document.getElementById("Content")){
+		CKEDITOR.replace("Content", {
+			height: 400,
+			extraPlugins: 'colorbutton,font',
+			toolbar:[
+			{name: 'document', items: [ 'Source', '-', 'Preview', ]},
+			{name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo']},
+			{name: 'styles', items: [ 'Format', 'Font', 'FontSize' ]},
+			{name: 'colors', items: [ 'TextColor', 'BGColor' ]},
+			{name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat' ]},
+			{name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight' ]},
+			{name: 'insert', items: [ 'Image', 'Table', 'Link', 'Unlink' ]},
+			{name: 'tools', items: [ 'Maximize' ]},
+			]
+		});
+		}
+	
+	})
+</script>
+
+<textarea id="Conent" name="Content" class="form-control" rows="15"></textarea>
+----------------------------------------------------------------------------------
+
+Geleceğinizi Güvence Altına Alın: Sigortanın Hayatımızdaki Önemi
+
+Hayat, her zaman planlaldığımız gibi ilerlemeyebilir. Beklenmedik kazalar, hastalıklar veya doğal afetler, hem maddi hem de manevi açıdan zorlayıcı olabilir. İşte tam da bu noktada sigorta devreye girer. Sigorta, olası riskler minimize ederek hem bireylerin hem de işletmelerin geleceğini güvence altına alır.
+
+Sigorta yaptırmak, yahnızca olası zararları karşılamak anlamına gelmez; aynı zamanda bir finansal planlama aracıdır. Sağlık sigortası, olası tedavi masraflarını üstlenirken; konut sigortası, evinizi yangın, sel veya hırsızlık gibi durumlara karşı korur. Trafik sigortası ise hem sizi hem de diğer sürücüleri maddi zararlardan koruyarak sosyal bir güvenlik sağlar.
+
+Dijitalleşen dünyada sigorta süreçleri de hızla gelişiyor. Artık birkaç tıklama ile poliçenizi oluşturabilir. prim ödemelerinizi takip edebilir ve hasar taleplerinizi online yapabilirsiniz. Bu sayede hem zaman kazanır hem de işlemlerinizi kolaylıkla yönetebilirsiniz.
+
+Unutmayın, sigorta bir lüks değil, geleceğe yapılan en akıllı yatırımlardın biridir. Kendinizi, alienizi ve işinizi güvence altına almak, bugünden atacağınız en doğru adımlardan biri olacaktır.

@@ -22,11 +22,9 @@
 
     <main>
 
-        @await Component.InvokeAsync("_BlogListBreadCrumbComponentPartial")
-        <!-- breadcrumb-area -->
-      
-        <!-- breadcrumb-area-end -->
-        <!-- inner-blog -->
+
+        @*  @await Component.InvokeAsync("_BlogListBreadCrumbComponentPartial") *@
+
         <section class="inner-blog pt-120 pb-120">
             <div class="container">
                 <div class="row">
@@ -45,14 +43,11 @@
                 </div>
             </div>
         </section>
-        <!-- inner-blog-end -->
-        <!-- newslater-area -->
+
         @await Component.InvokeAsync("_DefaultSubscribtionComponentPartial")
 
-        <!-- newslater-aread-end -->
     </main>
-    <!-- main-area-end -->
-    <!-- footer -->
+
     @await Component.InvokeAsync("_DefaultFooterComponentPartial")
 
     @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
