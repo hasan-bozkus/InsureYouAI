@@ -17,6 +17,9 @@ namespace InsureYouAI.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewBag.ControllerName = "Kategoriler";
+            ViewBag.PageName = "Kategori Listesi";
+
             var values = await _context.Categories.ToListAsync();
             return View(values);
         }

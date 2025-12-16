@@ -16,6 +16,8 @@ namespace InsureYouAI.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewBag.ControllerName = "İletişim Bilgileri";
+            ViewBag.PageName = "E-Posta - Telefon - Adres Bilgileri";
             var values = await _context.Contacts.ToListAsync();
             return View(values);
         }
@@ -23,6 +25,8 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public IActionResult CreateContact()
         {
+            ViewBag.ControllerName = "İletişim Bilgileri";
+            ViewBag.PageName = "Yeni İletişim Biglisi Oluştur";
             return View();
         }
 
@@ -45,6 +49,8 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateContact(int id)
         {
+            ViewBag.ControllerName = "İletişim Bilgileri";
+            ViewBag.PageName = "İletişim Bilgisini Güncelle";
             var value = await _context.Contacts.FindAsync(id);
             return View(value);
         }

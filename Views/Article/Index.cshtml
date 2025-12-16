@@ -36,9 +36,11 @@
                             <td>@item.CreatedDate.ToString("dd-MMM-yyyy")</td>
                             <td>
                                 <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                    <a href="/Default/Index/@item.ArticleId" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sitede Gör"><i class="bi bi-eye-fill"></i></a>
-                                    <a href="/Article/UpdateArticle/@item.ArticleId" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Düzenle"><i class="bi bi-pencil-fill"></i></a>
                                     <a href="/Article/DeleteArticle/@item.ArticleId" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sil"><i class="bi bi-trash-fill"></i></a>
+
+                                    <a href="/Article/UpdateArticle/@item.ArticleId" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Düzenle"><i class="bi bi-pencil-fill"></i></a>
+                                   
+                                    <a href="/Blog/Detail/@item.ArticleId" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sitede Gör"><i class="bi bi-eye-fill"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -50,6 +52,8 @@
             <a href="/Article/CreateArticle/" class="btn btn-outline-info">
                 Yeni Makale Girişi
             </a>
+            <a href="Article/CreateArticleWithOpenAI" class="btn btn-outline-primary">Yapay Zeka Makale Oluşturucu</a>
+
         </div>
     </div>
 </div>

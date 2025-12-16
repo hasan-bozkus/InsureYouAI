@@ -2,6 +2,8 @@
 @{
     ViewData["Title"] = "CreateAbout";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    
+    var aboutCount = @ViewBag.AboutCount;
 }
 
 
@@ -27,11 +29,16 @@
                 <textarea rows="5" class="form-control" asp-for="Description"> </textarea>
                 <br />
                 <br />
-                <button class="btn btn-outline-primary">Kaydet</button>
+                <button @(aboutCount >= 1 ? "onclick=handleSave()" : "") class="btn btn-outline-primary">Kaydet</button>
             </form>
         </div>
     </div>
 </div>
+<script>
+    function handleSave() {
 
+            alert("Elimizde bir adet hakıkmızda yazısı bulunmaktadır. Eskiyi silip yeni bir hakımızda yazısı ekleyebilirsiniz ya da güncelleyebilirsiniz.");
+    }
+</script>
 
 

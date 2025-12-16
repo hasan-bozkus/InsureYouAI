@@ -1,8 +1,10 @@
 ﻿using InsureYouAI.Context;
 using InsureYouAI.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace InsureYouAI.Controllers
 {
@@ -16,20 +18,44 @@ namespace InsureYouAI.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            ViewBag.ControllerName = "Makaleler";
+            ViewBag.PageName = "Makale Listesi";
             var values = await _context.Articles.Include(x=> x.AppUser).ToListAsync();
             return View(values);
         }
 
         [HttpGet]
-        public IActionResult CreateArticle()
+        public async Task<IActionResult> CreateArticle()
         {
+            ViewBag.ControllerName = "Makaleler";
+            ViewBag.PageName = "Yeni Makale Oluştur"; 
+            var categories = await _context.Categories
+                      .Select(x => new SelectListItem
+                      {
+                          Text = x.CategoryName,
+                          Value = x.CategoryId.ToString()
+                      })
+                      .ToListAsync();
+
+            ViewBag.categories = categories;
+
+            var authors = await _context.Users
+                        .Select(x => new SelectListItem
+                        {
+                            Text = x.Name + " " + x.Surame,
+                            Value = x.Id
+                        })
+                        .ToListAsync();
+
+            ViewBag.Authors = authors;
+
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateArticle(Article article)
         {
-            article.CreatedDate = DateTime.Now;
+            article.CreatedDate = DateTime.Now;        
 
             await _context.Articles.AddAsync(article);
             await _context.SaveChangesAsync();
@@ -47,6 +73,28 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateArticle(int id)
         {
+            ViewBag.ControllerName = "Makaleler";
+            ViewBag.PageName = "Makale Güncelleme Sayfası";
+            var categories = await _context.Categories
+                      .Select(x => new SelectListItem
+                      {
+                          Text = x.CategoryName,
+                          Value = x.CategoryId.ToString()
+                      })
+                      .ToListAsync();
+
+            ViewBag.categories = categories;
+
+            var authors = await _context.Users
+                        .Select(x => new SelectListItem
+                        {
+                            Text = x.Name + " " + x.Surame,
+                            Value = x.Id
+                        })
+                        .ToListAsync();
+
+            ViewBag.Authors = authors;
+
             var value = await _context.Articles.FindAsync(id);
             value.CreatedDate = value.CreatedDate;
             return View(value);
@@ -63,6 +111,8 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public IActionResult CreateArticleWithOpenAI()
         {
+            ViewBag.ControllerName = "Makaleler";
+            ViewBag.PageName = "Yapay Zeka Makale Oluşturucu";
             return View();
         }
 

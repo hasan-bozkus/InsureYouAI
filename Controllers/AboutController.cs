@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace InsureYouAI.Controllers
 {
@@ -18,19 +19,28 @@ namespace InsureYouAI.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewBag.ControllerName = "Hakkımızda";
+            ViewBag.PageName = "Hakkımızda Listesi";
             var values = await _context.Abouts.ToListAsync();
             return View(values);
         }
 
         [HttpGet]
-        public IActionResult CreateAbout()
+        public async Task<IActionResult> CreateAbout()
         {
+            ViewBag.AboutCount = await _context.Abouts.CountAsync();
+            ViewBag.ControllerName = "Hakkımızda";
+            ViewBag.PageName = "Yeni Hakkımızda Oluştur (Tema Bütünlüğünü Korumak İçin 1 Adet Hakkımızda Yazısı Giriniz.)";
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateAbout(About About)
         {
+            if (await _context.Abouts.AnyAsync())
+            {
+                return View(About);
+            }
             await _context.Abouts.AddAsync(About);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
@@ -47,6 +57,8 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateAbout(int id)
         {
+            ViewBag.ControllerName = "Hakkımızda";
+            ViewBag.PageName = "Hakkımızda Güncelleme Sayfsaı";
             var value = await _context.Abouts.FindAsync(id);
             return View(value);
         }
@@ -62,6 +74,9 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateAboutWithGoogleGemini()
         {
+            ViewBag.ControllerName = "Hakkımızda";
+            ViewBag.PageName = "Yapay Zeka ile Hakkımızda Oluştur (Tema Bütünlüğünü Korumak İçin 1 Adet Hakkımızda Yazısı Giriniz.)";
+
             //anahtar ezildi
             var apiKey = "AIzaSyCWnN59rffSSTsv_fH68Y8xazAudMGKyUE";
             var model = "gemini-1.5-pro";

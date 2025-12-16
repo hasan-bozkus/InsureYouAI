@@ -4,17 +4,41 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
+<script src="https://cdn.ckeditor.com/4.20.1/standard-all/ckeditor.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    if(document.getElementById("Content")){
+        CKEDITOR.replace("Content", {
+            height: 400,
+            extraPlugins: 'colorbutton,font',
+            toolbar:[
+            {name: 'document', items: [ 'Source', '-', 'Preview', ]},
+            {name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo']},
+            {name: 'styles', items: [ 'Format', 'Font', 'FontSize' ]},
+            {name: 'colors', items: [ 'TextColor', 'BGColor' ]},
+            {name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat' ]},
+            {name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight' ]},
+            {name: 'insert', items: [ 'Image', 'Table', 'Link', 'Unlink' ]},
+            {name: 'tools', items: [ 'Maximize' ]},
+            ]
+        });
+        }
+
+    });
+</script>
+
 <div class="card">
     <div class="card-body">
         <div class="d-flex align-items-center">
-            <h5 class="mb-0">Makale Düzenleme Sayfası</h5>
+            <h5 class="mb-0">Yeni Makale Girişi</h5>
 
         </div>
         <div class="table-responsive mt-3">
 
             <form method="post">
 
-                <input type="hidden" asp-for="ArticleId" />
+                <input asp-for="ArticleId" type="hidden" />
 
                 <label>Başlığı</label>
                 <input type="text" asp-for="Title" class="form-control" />
@@ -28,12 +52,21 @@
                 <input type="text" asp-for="CoverImageUrl" class="form-control" />
                 <br />
 
-                <label>Kategori Id</label>
-                <input type="text" asp-for="CategoryId" class="form-control" />
+                <label>Kategori</label>
+                <select id="categorySelect" asp-items="ViewBag.categories" asp-for="CategoryId" class="form-select">
+                    <option value="">Kategori Seçiniz...</option>
+                </select>
                 <br />
 
-                <label>İçerik</label>
-                <textarea rows="15" class="form-control" asp-for="Content"> </textarea>
+                <label>Yazar</label>
+                <select id="authorSelect" asp-items="ViewBag.Authors" asp-for="AppUserId" class="form-select">
+                    <option value="">Yazar Seçiniz...</option>
+                </select>
+                <br />
+
+                <label>Makale İçeriği</label>
+                @*<textarea id="Conent" name="Content" class="form-control" rows="15"></textarea> *@
+                <textarea id="Content" rows="15" class="form-control" asp-for="Content"> </textarea>
                 <br />
                 <br />
                 <button class="btn btn-outline-primary">Kaydet</button>
@@ -41,4 +74,5 @@
         </div>
     </div>
 </div>
+
 

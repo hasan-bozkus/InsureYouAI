@@ -18,6 +18,8 @@ namespace InsureYouAI.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewBag.ControllerName = "Hakkımızda Ögeleri";
+            ViewBag.PageName = "Hakkımızda Ögereleri Listesi";
             var values = await _context.AboutItems.ToListAsync();
             return View(values);
         }
@@ -25,12 +27,15 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public IActionResult CreateAboutItem()
         {
+            ViewBag.ControllerName = "Hakkımızda Ögeleri";
+            ViewBag.PageName = "Yeni Hakkımızda Ögereleri Oluştur";
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateAboutItem(AboutItem aboutItem)
         {
+            
             await _context.AboutItems.AddAsync(aboutItem);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
@@ -47,6 +52,8 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateAboutItem(int id)
         {
+            ViewBag.ControllerName = "Hakkımızda Ögeleri";
+            ViewBag.PageName = "Hakkımızda Ögerelerini Güncelleme Sayfası";
             var value = await _context.AboutItems.FindAsync(id);
             return View(value);
         }
@@ -62,10 +69,12 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateAboutItemWithGoogleGemini()
         {
+            ViewBag.ControllerName = "Hakkımızda Ögeleri";
+            ViewBag.PageName = "Yapay Zeka ile Hakkımızda Ögereleri Oluştur";
             //anahtar ezildi
-            var apiKey = "AIzaSyCWnN59rffSSTsv_fH68Y8xazAudMGKyUE";
-            var model = "gemini-1.5-pro";
-            var url = $"https://generativelanguage.googleapis.com/v1/models/{model}:generateContent?key={apiKey}";
+            var apiKey = "AIzaSyA7T4YeqnlHyFNuO091cd8gY6PKpWMcZF0";
+            var model = "gemini-2.5-flash";
+            var url = $"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={apiKey}";
             var requestBody = new
             {
                 contents = new[]
