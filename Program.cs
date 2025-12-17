@@ -1,11 +1,12 @@
 using InsureYouAI.Context;
 using InsureYouAI.Entities;
 using InsureYouAI.Models;
+using InsureYouAI.Services;
 using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddHttpClient();
+builder.Services.AddScoped<AIService>();
 builder.Services.AddSignalR();
 builder.Services.AddHttpClient("openai", c=>
 {

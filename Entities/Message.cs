@@ -10,5 +10,7 @@
         public string MessageDetail { get; set; }
         public DateTime SendDate { get; set; }
         public bool IsRead { get; set; }
+        public string ? AICategory { get; set; }
+        public string ? Priority { get; set; }
     }
 }
