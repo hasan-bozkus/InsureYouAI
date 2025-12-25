@@ -177,7 +177,7 @@
 
 
             // 2) ELEVENLABS AYARLARI
-            string apiKey = "sk_16d2fa5f25a4443ba728ebb7fd037919c5b7f8f2efef1ddd";
+            string apiKey = "anahtar ezildi";
             string voiceId = "EXAVITQu4vr4xnSDxMaL"; // Rachel (güzel bir ses)
             string url = $"https://api.elevenlabs.io/v1/text-to-speech/{voiceId}/stream";
 
