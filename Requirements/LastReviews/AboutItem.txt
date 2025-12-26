@@ -1,8 +1,10 @@
 ﻿@model List<AboutItem>
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "AboutItemList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
+
     bool canAddNewItem = Model == null || Model.Count < 3;
 }
 
@@ -38,47 +40,47 @@
                 </thead>
 
                 <tbody>
-                    @foreach (var item in Model)
-                    {
-                        count++;
-                        <tr class="table-row-hover">
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr class="table-row-hover">
 
-                            <!-- Index -->
-                            <td>
-                                <span class="badge bg-secondary bg-opacity-75">@count</span>
-                            </td>
+                        <!-- Index -->
+                        <td>
+                            <span class="badge bg-secondary bg-opacity-75">@count</span>
+                        </td>
 
-                            <!-- Detail -->
-                            <td class="fw-semibold text-dark">
-                                <i class="bi bi-dot text-primary me-1"></i>
-                                @item.Deatil
-                            </td>
+                        <!-- Detail -->
+                        <td class="fw-semibold text-dark">
+                            <i class="bi bi-dot text-primary me-1"></i>
+                            @item.Detail
+                        </td>
 
-                            <!-- Actions -->
-                            <td class="text-center">
-                                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                        <!-- Actions -->
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center gap-2 flex-wrap">
 
-                                    <a href="/Default/Index/"
-                                       target="_blank"
-                                       class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm">
-                                        <i class="bi bi-eye-fill me-1"></i> Gör
-                                    </a>
+                                <a href="/Default/Index/"
+                                   target="_blank"
+                                   class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm">
+                                    <i class="bi bi-eye-fill me-1"></i> Gör
+                                </a>
 
-                                    <a href="/AboutItem/UpdateAboutItem/@item.AboutItemId"
-                                       class="btn btn-sm btn-outline-warning rounded-pill px-3 shadow-sm">
-                                        <i class="bi bi-pencil-square me-1"></i> Düzenle
-                                    </a>
+                                <a href="/AboutItem/UpdateAboutItem/@item.AboutItemId"
+                                   class="btn btn-sm btn-outline-warning rounded-pill px-3 shadow-sm">
+                                    <i class="bi bi-pencil-square me-1"></i> Düzenle
+                                </a>
 
-                                    <a href="/AboutItem/DeleteAboutItem/@item.AboutItemId"
-                                       class="btn btn-sm btn-outline-danger rounded-pill px-3 shadow-sm">
-                                        <i class="bi bi-trash-fill me-1"></i> Sil
-                                    </a>
+                                <a href="/AboutItem/DeleteAboutItem/@item.AboutItemId"
+                                   class="btn btn-sm btn-outline-danger rounded-pill px-3 shadow-sm">
+                                    <i class="bi bi-trash-fill me-1"></i> Sil
+                                </a>
 
-                                </div>
-                            </td>
+                            </div>
+                        </td>
 
-                        </tr>
-                    }
+                    </tr>
+                }
                 </tbody>
             </table>
         </div>

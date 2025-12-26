@@ -20,7 +20,7 @@ namespace InsureYouAI.Controllers
         {
             ViewBag.ControllerName = "Makaleler";
             ViewBag.PageName = "Makale Listesi";
-            var values = await _context.Articles.Include(x=> x.AppUser).ToListAsync();
+            var values = await _context.Articles.Include(x=> x.AppUser).Include(x => x.Category).ToListAsync();
             return View(values);
         }
 

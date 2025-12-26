@@ -1,7 +1,7 @@
 ﻿@model List<Category>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "CategoryList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
@@ -57,8 +57,9 @@
                             <td class="text-center">
                                 <a href="/Category/DeleteCategory/@item.CategoryId"
                                    class="btn btn-sm btn-outline-danger rounded-pill px-3 shadow-sm"
-                                   data-bs-toggle="tooltip" title="Sil">
-                                    <i class="bi bi-trash-fill me-1"></i> Sil
+                                   data-bs-toggle="tooltip"
+                                   title="Sil">
+                                    <i class="bi bi-trash-fill"></i>
                                 </a>
                             </td>
 
@@ -66,8 +67,9 @@
                             <td class="text-center">
                                 <a href="/Category/UpdateCategory/@item.CategoryId"
                                    class="btn btn-sm btn-outline-warning rounded-pill px-3 shadow-sm"
-                                   data-bs-toggle="tooltip" title="Düzenle">
-                                    <i class="bi bi-pencil-square me-1"></i> Düzenle
+                                   data-bs-toggle="tooltip"
+                                   title="Düzenle">
+                                    <i class="bi bi-pencil-square"></i>
                                 </a>
                             </td>
 
@@ -76,8 +78,9 @@
                                 <a href="/Blog/GetBlogByCategory/@item.CategoryId"
                                    target="_blank"
                                    class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm"
-                                   data-bs-toggle="tooltip" title="Sitede Gör">
-                                    <i class="bi bi-eye-fill me-1"></i> Görüntüle
+                                   data-bs-toggle="tooltip"
+                                   title="Sitede Gör">
+                                    <i class="bi bi-eye-fill"></i>
                                 </a>
                             </td>
                         </tr>
@@ -104,3 +107,52 @@
     }
 </style>
 
+
+----------------------------------------------------
+
+<tbody>
+@foreach (var item in Model)
+{
+    count++;
+    <tr class="table-row-hover">
+        <td>
+            <span class="badge bg-secondary bg-opacity-75">@count</span>
+        </td>
+
+        <td class="fw-semibold text-dark">
+            <i class="bi bi-folder2-open text-primary me-1"></i>
+            @item.CategoryName
+        </td>
+
+        <!-- Sil -->
+        <td class="text-center">
+            <a href="/Category/DeleteCategory/@item.CategoryId"
+               class="btn btn-sm btn-outline-danger rounded-pill px-3 shadow-sm"
+               data-bs-toggle="tooltip" title="Sil">
+                <i class="bi bi-trash-fill me-1"></i> Sil
+            </a>
+        </td>
+
+        <!-- Güncelle -->
+        <td class="text-center">
+            <a href="/Category/UpdateCategory/@item.CategoryId"
+               class="btn btn-sm btn-outline-warning rounded-pill px-3 shadow-sm"
+               data-bs-toggle="tooltip" title="Düzenle">
+                <i class="bi bi-pencil-square me-1"></i> Düzenle
+            </a>
+        </td>
+
+        <!-- Sitede Gör -->
+        <td class="text-center">
+            <a href="/Blog/GetBlogByCategory/@item.CategoryId"
+               target="_blank"
+               class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm"
+               data-bs-toggle="tooltip" title="Sitede Gör">
+                <i class="bi bi-eye-fill me-1"></i> Görüntüle
+            </a>
+        </td>
+    </tr>
+}
+</tbody>
+
+-------------------------------------------------------
