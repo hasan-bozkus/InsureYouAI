@@ -6,7 +6,7 @@ namespace InsureYouAI.Services
     public class AIService
     {
         //anahtar ezilecek
-        private readonly string _apiKey = "AIzaSyDwTAQjIK7PhP16XrOWqDioW3FBwj4hOQI";
+        private readonly string _apiKey = "anahtar ezildi";
         private readonly string _model = "gemini-2.5-flash";
 
         public async Task<string> PredictCategoryAsync(string messageText)
