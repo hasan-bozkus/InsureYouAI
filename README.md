@@ -8,8 +8,6 @@ Insure You AI, uygulamada yapay zeka teknolojilerini sigorta sektörüne entegre
 
 Insure You AI; Asp.Net Core Mvc 9.0, EntityFramework Core, Open AI, Gemini, Anthropic, Microsoft Azure AI, Stabilitiy AI ve Replicate gibi öne çıkan ai servileri kullanılarak geliştirildi.
 
-⚠️ Not: Bu proje geliştirilmekte olup halen devam etmektedir. Kurs tamamlandıkça repo güncellenecektir.
-
 ## 🔧 Teknik Yapı ve Mimarisi
 💎 .Net Core 9.0 Mvc <br />
 💎 EntityFramework Core <br />
